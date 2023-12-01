@@ -1,11 +1,11 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
-import ocr  # assuming maintain.py is in the same directory
-import outputter  # assuming outputter.py is in the same directory
-
+import ocr
+import outputter
+from config import logos_dir
 # Load the logo from the file
-logo = Image.open('images/logos/ptcl.jpg')
+logo = Image.open(f'{logos_dir}/ptcl.jpg')
 
 # Display the logo in the sidebar
 st.sidebar.image(logo, use_column_width=False)
@@ -52,7 +52,7 @@ accounts = ['Ufone', 'Upaisa', 'Corporate']
 logos_and_checkboxes = st.columns(len(networks))
 checkboxes_dict = {}
 for i, network in enumerate(networks):
-    logo = Image.open(f'C:\\Users\\jawad\\Downloads\\projects\\ocr\\images\\logos\\{network.lower()}.png')
+    logo = Image.open(f'{logos_dir}/{network.lower()}.png')
     logos_and_checkboxes[i].image(logo, use_column_width=False)
     checkbox = logos_and_checkboxes[i].checkbox(network, value=True, key=f'{network}_checkbox')  # Added a unique key for each checkbox
     checkboxes_dict[network] = checkbox

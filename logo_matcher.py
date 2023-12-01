@@ -1,7 +1,6 @@
 import cv2
 import os
-
-logos_dir = r"C:\Users\jawad\Downloads\projects\ocr\images\new\logos"
+from config import logos_dir
 
 # Load the logos
 logos = [cv2.imread(os.path.join(logos_dir, logo_name), 0) for logo_name in os.listdir(logos_dir)]

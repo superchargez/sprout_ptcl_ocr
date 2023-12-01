@@ -27,7 +27,6 @@ def corrected_source(text):
 
 
 from datetime import datetime
-
 def corrected_date_comments(text):
     # Correct date format
     ic(text)
